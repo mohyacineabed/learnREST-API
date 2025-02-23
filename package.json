@@ -16,5 +16,8 @@
     "url": "https://github.com/mohyacineabed/learnREST-API/issues"
   },
   "homepage": "https://github.com/mohyacineabed/learnREST-API#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
