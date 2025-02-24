@@ -8,17 +8,17 @@ router.get('/ninjas', function(req, res){
 
 // POST request handler
 router.post('/ninjas', function(req, res){
-    res.send('POST');
+    res.send({type: 'POST'});
 });
 
 // PUT request handler
 router.put('/ninjas/:id', function(req, res){
-    res.send('PUT');
+    res.send({type: 'PUT'});
 });
 
 // DELETE request handler
 router.delete('/ninjas/:id', function(req, res){
-    res.send('DELETE');
+    res.send({type: 'DELETE'});
 });
 
 module.exports = router;
