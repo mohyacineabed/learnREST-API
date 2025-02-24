@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const router = express.Router();
 
@@ -8,7 +9,11 @@ router.get('/ninjas', function(req, res){
 
 // POST request handler
 router.post('/ninjas', function(req, res){
-    res.send({type: 'POST'});
+    res.send({
+        type: 'POST',
+        name: req.body.name,
+        rank: req.body.rank
+    });
 });
 
 // PUT request handler
