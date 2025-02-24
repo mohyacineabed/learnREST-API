@@ -8,7 +8,7 @@ const routes = require('./routes/api');
 //set up express app
 const app = express();
 
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 
 app.use('/api', routes); 
 
