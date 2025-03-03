@@ -15,3 +15,7 @@ const NinjaSchema = new Schema({
         default: false // if not specified when creating a ninja
     }
 });
+
+const Ninja = mongoose.model('ninja', NinjaSchema); 
+                             // ninja is the name of the collections
+module.exports = Ninja;
