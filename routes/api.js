@@ -16,12 +16,10 @@ router.post('/ninjas', function(req, res){
     ninja.save(); */
 
     // create a ninja object and save it to the collection
-    Ninja.create(body.req);
-
-    res.send({
-        type: 'POST',
-        name: req.body.name,
-        rank: req.body.rank
+    // then after the data is passed in the body and saved,
+    // run the function with the saved data 'ninja' as a parameter
+    Ninja.create(req.body).then(function(ninja){
+        res.send(ninja);
     });
 });
 
