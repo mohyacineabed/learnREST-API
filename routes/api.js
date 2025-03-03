@@ -23,9 +23,15 @@ router.post('/ninjas', function(req, res, next){
     }).catch(next);
 });
 
-// PUT request handler
+// Update request handler
 router.put('/ninjas/:id', function(req, res){
-    res.send({type: 'PUT'});
+    Ninja.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+        // the ninja sent back is still outdated so
+        // we are going to call the for the data again
+        Ninja.findOne({_id: req.params.id}).then(function(ninja){
+            res.send(ninja);
+        })
+    })
 });
 
 // DELETE request handler
