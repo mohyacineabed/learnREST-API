@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const Ninja = require('../models/ninja');
 const router = express.Router();
 
 // GET request handler
@@ -9,6 +10,14 @@ router.get('/ninjas', function(req, res){
 
 // POST request handler
 router.post('/ninjas', function(req, res){
+    /* // create a ninja object
+    var ninja = new Ninja(req.body);
+    // save to database of ninjas collection
+    ninja.save(); */
+
+    // create a ninja object and save it to the collection
+    Ninja.create(body.req);
+
     res.send({
         type: 'POST',
         name: req.body.name,
